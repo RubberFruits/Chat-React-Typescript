@@ -27,14 +27,13 @@ const Chats = () => {
    }
 
    useEffect(() => {
-      debugger
       if (!user || user === null) {
          history.push('/')
          return
       }
       axios.get('https://api.chatengine.io/users/me/', {
          headers: {
-            'Project-ID': '3dfaa792-0135-4d79-a8c9-b9e4ecced5a5',
+            'Project-ID': process.env.REACT_APP_CHAT_ENGINE_ID,
             'User-Name': user.email,
             'User-Secret': user.uid,
          }
@@ -54,7 +53,7 @@ const Chats = () => {
                      formData,
                      {
                         headers: {
-                           'private-key': 'dea7072c-811d-405f-b43b-8901aeddcc98'
+                           'private-key': process.env.REACT_APP_CHAT_ENGINE_KEY
                         }
                      })
                      .then(() => setLoading(false))
@@ -63,14 +62,13 @@ const Chats = () => {
          })
    }, [user, history])
 
-
+   if (loading) return <h1>YES</h1>
 
    return (
-
       <div className={style.chatsPage}>
          <div className={style.navBar}>
             <div className={style.logoTab}>
-               Unichat
+               React-Typescript chat application
             </div>
             <div
                onClick={() => handleLogout()}
@@ -79,9 +77,8 @@ const Chats = () => {
             </div>
          </div>
          <ChatEngine
-            className={style.chatEngine}
-            height='calc(100% - 66px)'
-            projectID='3dfaa792-0135-4d79-a8c9-b9e4ecced5a5'
+            height='calc(100vh - 66px)'
+            projectID={process.env.REACT_APP_CHAT_ENGINE_ID}
             userName={user?.email}
             userSecret={user?.uid}
          />

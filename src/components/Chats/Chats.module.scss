@@ -1,5 +1,5 @@
 .chatsPage{
-position: relative;
+ position: relative;
   width: 100vw;
   height: 100vh;
 }
@@ -14,9 +14,11 @@ position: relative;
 
 .logoTab {
    display: block;
-   font-size: 32px;
+   font-size: 22px;
    height:50px;
-   width:120px;
+   line-height:60px;
+   margin-left:10px;
+   width:520px;
    display: inline-block;
    font-weight: 700;
    color: white;
@@ -26,7 +28,12 @@ position: relative;
    display: block;
    width:60px;
    height:50px;
+   margin-right:20px;
    line-height: 50px;
    color: white;
    cursor: pointer;
+}
+
+.chatsPage > :nth-child(2){
+   height:100%;
 }
