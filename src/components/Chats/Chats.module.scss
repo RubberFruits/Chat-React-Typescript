@@ -1,0 +1,32 @@
+.chatsPage{
+position: relative;
+  width: 100vw;
+  height: 100vh;
+}
+
+.navBar {
+   width: 100%;
+   display: flex;
+   justify-content:space-between;
+   height: 66px;
+   background-color: #002766;
+}
+
+.logoTab {
+   display: block;
+   font-size: 32px;
+   height:50px;
+   width:120px;
+   display: inline-block;
+   font-weight: 700;
+   color: white;
+}
+ 
+.logoutTab {
+   display: block;
+   width:60px;
+   height:50px;
+   line-height: 50px;
+   color: white;
+   cursor: pointer;
+}
