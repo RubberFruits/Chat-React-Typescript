@@ -1,0 +1,78 @@
+.ce-chats-container {
+   background-color:ghostwhite !important;
+ }
+
+.ce-chat-list{
+   background-color:ghostwhite !important;
+   overflow:  hidden !important;
+}
+.ce-chat-form-container{
+   margin-bottom:10px;
+   background-color: ghostwhite !important;
+}
+
+.ce-primary-button{
+   background-color:#BBBBF2 !important;
+}
+
+.ce-chat-form-container,
+.ce-message-bubble,
+.ce-chat-title-text,
+.ce-chat-subtitle-text,
+.ce-settings-container
+{
+   font-family: 'Montserrat' !important;
+}
+
+
+.ce-chat-card {
+   background-color: white !important;
+   width:90%;
+   margin:0 auto;
+   margin-bottom:10px;
+   box-shadow:  10px 10px 10px rgba(232, 232, 232,0.6);
+   transition:all 0.2s ease;
+   border-radius: 15px;
+}
+
+.ce-active-chat-card{
+   background-color: #e6e6fa !important;
+}
+
+
+.ce-feed-container,
+.ce-chat-title{
+   background-color: #e6e6fa !important;
+   color:black !important;
+}
+
+.ce-chat-title{
+   border-bottom-left-radius: 30px !important;
+   border-bottom-right-radius: 30px !important;
+   height:10% !important;
+   width: 90% !important;
+   margin-left:4% !important; 
+}
+
+
+.ce-chat-title-text,
+.ce-chat-subtitle-text{
+   color:black !important;
+}
+
+.ce-chat-feed-container{
+   background-color: ghostwhite !important;
+}
+
+.ce-settings{
+   background-color:ghostwhite !important;
+}
+
+.ce-their-message-bubble{
+   background-color: white !important;
+}
+
+.ce-my-message-bubble{
+   background-color:#e6e6fa !important;
+   color:black !important;
+}

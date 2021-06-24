@@ -1,7 +1,7 @@
 import React from 'react'
 import style from './Login.module.scss';
 import styled, { keyframes } from 'styled-components';
-import { GoogleOutlined } from '@ant-design/icons'
+import { GoogleOutlined, GithubOutlined, TwitterOutlined } from '@ant-design/icons'
 import firebase from 'firebase/app'
 import { auth } from '../../API/firebase'
 
@@ -13,14 +13,27 @@ const Login: React.FC = () => {
                <Header>Welcome</Header>
                <Text>Chat application based on React and Typiscript</Text>
             </LeftDecorateBox>
-            <FormWrapper className='is-flex-grow-0'>
+            <LoginWrapper >
+               <LoginHeader >Login</LoginHeader>
                <SignInDiv
                   onClick={() => auth.signInWithRedirect(new firebase.auth.GoogleAuthProvider())}
                   className='button is-rounded'>
                   <GoogleOutlined className={style.iconS} style={{ width: '50px', height: '50px' }} />
                   Sign in with Google
                </SignInDiv>
-            </FormWrapper>
+               <SignInDiv
+                  onClick={() => auth.signInWithRedirect(new firebase.auth.GithubAuthProvider())}
+                  className='button is-rounded has-background-black'>
+                  <GithubOutlined className={style.iconS} style={{ width: '50px', height: '50px' }} />
+                  Sign in with Github
+               </SignInDiv>
+               <SignInDiv
+                  /*  onClick={() => auth.signInWithRedirect(new firebase.auth.GoogleAuthProvider())} */
+                  className='button is-rounded has-background-info'>
+                  <TwitterOutlined className={style.iconS} style={{ width: '50px', height: '50px' }} />
+                  Sign in with Twitter
+               </SignInDiv>
+            </LoginWrapper>
          </FlexContainer>
       </Container>
    )
@@ -29,7 +42,7 @@ const Login: React.FC = () => {
 const Container = styled.div`
 height:100vh;
 width:100vw;
-background: linear-gradient(120deg, #0a1045, #4a1b56, #7d2b60, #aa4363, #d06364, #ed8a65, #ffb56b);
+background: lavender;
 `
 
 const FlexContainer = styled.div`
@@ -37,16 +50,28 @@ const FlexContainer = styled.div`
    width:60%;
 `
 
+const blocksStartAnimation = keyframes`
+   from{
+      margin-right:40%;
+   }
+
+   to{ 
+      margin-right:0;
+   }
+`
+
 const LeftDecorateBox = styled.div`
    height:100%;
    width:50%;
-   background-color:#F57f64;
+   margin-right:40%;
+   background-color:royalblue;
    -webkit-border-top-left-radius: 40px;
    -webkit-border-bottom-left-radius: 40px;
    -moz-border-radius-topleft: 40px;
    -moz-border-radius-bottomleft: 40px;
    border-top-left-radius: 40px;
    border-bottom-left-radius: 40px;
+   animation:${blocksStartAnimation} 1s ease-in-out 1 forwards ;
 `
 const pseudoAnimation = keyframes`
 from{ 
@@ -89,7 +114,7 @@ font-size:40px;
 margin-right:20%;
 width:max-content;
 color:white;
-animation:${wordsAnimation} 2s ease-in-out 1 forwards ;
+animation:${wordsAnimation} 1s ease-in-out 1 forwards ;
 
 &:after{
    content:'';
@@ -113,10 +138,14 @@ width:55%;
 animation:${pAnimation} 2s ease-in-out 1 forwards ;
 `
 
-const FormWrapper = styled.div`
+const LoginWrapper = styled.div`
    height:100%;
+   display:flex;
+   flex-direction:column;
+   justify-content:center;
+   align-items:center;
    width:50%;
-   background-color:#f5eee9;
+   background-color:white;
    -webkit-border-top-right-radius: 40px;
    -webkit-border-bottom-right-radius: 40px;
    -moz-border-radius-topright: 40px;
@@ -127,9 +156,9 @@ const FormWrapper = styled.div`
 
 const SignInDiv = styled.div`
 font-family: 'Montserrat';
-margin-left:50px;
+margin-bottom:2%;
 font-weight:bold;
-width:220px;
+width:240px;
 height:50px;
 background-color:#F57f64;
 color:white;
@@ -137,9 +166,16 @@ transition:0.3s all ease;
 
 &:hover{
    color:white;
-   transform:scale(1.3);
+   transform:scale(1.2);
    border:none;
 }
 `
-
+const LoginHeader = styled(Header)`
+color:black;
+margin:0 auto;
+margin-top:20%;
+&:after{
+   background-color:black;
+}
+`
 export default Login

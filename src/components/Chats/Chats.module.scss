@@ -2,14 +2,22 @@
  position: relative;
   width: 100vw;
   height: 100vh;
+  background-color:lavender;
 }
 
 .navBar {
-   width: 100%;
+   width: 90%;
+   margin:0 auto;
    display: flex;
    justify-content:space-between;
    height: 66px;
-   background-color: #002766;
+   background-color: #475a81;
+   -webkit-border-top-left-radius: 20px;
+   -webkit-border-top-right-radius: 40px;
+   -moz-border-radius-topleft: 40px;
+   -moz-border-radius-topright: 40px;
+   border-top-left-radius: 40px;
+   border-top-right-radius: 40px;
 }
 
 .logoTab {
@@ -17,7 +25,7 @@
    font-size: 22px;
    height:50px;
    line-height:60px;
-   margin-left:10px;
+   margin-left:20px;
    width:520px;
    display: inline-block;
    font-weight: 700;
@@ -26,14 +34,26 @@
  
 .logoutTab {
    display: block;
-   width:60px;
-   height:50px;
-   margin-right:20px;
-   line-height: 50px;
-   color: white;
+   font-family: 'Montserrat';
+   width:80px;
+   height:40px;
+   margin-top:10px;
+   text-align: center;
+   margin-right:30px;
+   border-radius:10px;
+   line-height: 39px;
    cursor: pointer;
+   background-color:white;
+   transition:0.2s all ease;
+
+   &:hover{
+      transform: scale(1.2);
+   }
 }
 
 .chatsPage > :nth-child(2){
-   height:100%;
+  width:90% !important;
+  height:100px !important;
+  margin:0 auto;
 }
+

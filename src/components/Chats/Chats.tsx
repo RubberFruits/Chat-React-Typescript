@@ -5,6 +5,7 @@ import { auth } from '../../API/firebase'
 import style from './Chats.module.scss'
 import { useAuth } from '../../contexts/AuthContext'
 import axios from 'axios';
+import './chat.scss'
 
 const Chats = () => {
 
@@ -62,8 +63,6 @@ const Chats = () => {
          })
    }, [user, history])
 
-   if (loading) return <h1>YES</h1>
-
    return (
       <div className={style.chatsPage}>
          <div className={style.navBar}>
@@ -81,6 +80,7 @@ const Chats = () => {
             projectID={process.env.REACT_APP_CHAT_ENGINE_ID}
             userName={user?.email}
             userSecret={user?.uid}
+
          />
       </div >
    )
